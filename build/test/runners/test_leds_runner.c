@@ -79,9 +79,9 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 22);
-  run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 29);
-  run_test(test_IndividualLedsOff, "test_IndividualLedsOff", 37);
+  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 26);
+  run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 33);
+  run_test(test_IndividualLedsOff, "test_IndividualLedsOff", 39);
 
   return UnityEnd();
 }

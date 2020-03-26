@@ -3,9 +3,17 @@
 #include "/var/lib/gems/2.5.0/gems/ceedling-0.29.1/vendor/unity/src/unity.h"
 
 
+static uint16_t ledsVirtuales;
+
+
+
 void setUp(void){
 
+    Leds_Create(&ledsVirtuales);
+
 }
+
+
 
 void tearDown(void){
 
@@ -27,7 +35,7 @@ void test_ledsOffAfterCreate(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(25), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(29), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -37,11 +45,7 @@ void test_ledsOffAfterCreate(void){
 
 void test_IndividualLedsOn(void){
 
-    uint16_t ledsVirtuales;
-
     uint8_t led=3;
-
-    Leds_Create(&ledsVirtuales);
 
     Leds_On(led);
 
@@ -49,7 +53,7 @@ void test_IndividualLedsOn(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(34), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(36), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -61,8 +65,6 @@ void test_IndividualLedsOff(void){
 
     uint8_t led=3;
 
-    Leds_Create(&ledsVirtuales);
-
     Leds_On(led);
 
     Leds_Off(led);
@@ -71,6 +73,6 @@ void test_IndividualLedsOff(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(43), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(44), UNITY_DISPLAY_STYLE_HEX16);
 
 }
