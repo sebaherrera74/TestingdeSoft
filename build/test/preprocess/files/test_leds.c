@@ -25,6 +25,28 @@ void test_ledsOffAfterCreate(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(13), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(24), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+void test_IndividualLedsOn(void){
+
+    uint16_t ledsVirtuales;
+
+    int led=3;
+
+    Leds_Create(&ledsVirtuales);
+
+    Leds_On(led);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1<<(led-1))), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(32), UNITY_DISPLAY_STYLE_HEX16);
+
+
 
 }

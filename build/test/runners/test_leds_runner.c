@@ -11,6 +11,7 @@ char* GlobalOrderError;
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_ledsOffAfterCreate(void);
+extern void test_IndividualLedsOn(void);
 
 
 /*=======Mock Management=====*/
@@ -77,7 +78,8 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 10);
+  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 21);
+  run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 27);
 
   return UnityEnd();
 }
