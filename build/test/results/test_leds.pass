@@ -4,19 +4,23 @@
   :file: test_leds.c
 :successes:
 - :test: test_ledsOffAfterCreate
-  :line: 21
+  :line: 22
   :message: ''
   :unity_test_time: 0
 - :test: test_IndividualLedsOn
-  :line: 27
+  :line: 29
+  :message: ''
+  :unity_test_time: 0
+- :test: test_IndividualLedsOff
+  :line: 37
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 2
-  :passed: 2
+  :total: 3
+  :passed: 3
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0013541739999709534
+:time: 0.00119521899978281

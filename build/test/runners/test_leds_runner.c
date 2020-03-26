@@ -12,6 +12,7 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_ledsOffAfterCreate(void);
 extern void test_IndividualLedsOn(void);
+extern void test_IndividualLedsOff(void);
 
 
 /*=======Mock Management=====*/
@@ -78,8 +79,9 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 21);
-  run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 27);
+  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 22);
+  run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 29);
+  run_test(test_IndividualLedsOff, "test_IndividualLedsOff", 37);
 
   return UnityEnd();
 }

@@ -18,17 +18,29 @@ void tearDown(void){
 }
 
 
+//1 Test-Después de la inicialización todos los LEDs deben quedar apagados 
 void test_ledsOffAfterCreate(void){
     uint16_t ledsVirtuales=0xFFFF;
     Leds_Create(&ledsVirtuales);
     TEST_ASSERT_EQUAL_HEX16(0,ledsVirtuales);
 }
 
+//2 Test-Se puede prender un LED individual.
 void test_IndividualLedsOn(void){
     uint16_t ledsVirtuales;
-    int led=3;
+    uint8_t led=3;
     Leds_Create(&ledsVirtuales);
     Leds_On(led);
     TEST_ASSERT_EQUAL_HEX16(1<<(led-1),ledsVirtuales);
-
 }
+
+void test_IndividualLedsOff(void){
+    uint16_t ledsVirtuales;
+    uint8_t led=3;
+    Leds_Create(&ledsVirtuales);
+    Leds_On(led);
+    Leds_Off(led);
+    TEST_ASSERT_EQUAL_HEX16(0,ledsVirtuales);
+}
+
+

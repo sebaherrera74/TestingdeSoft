@@ -11,3 +11,7 @@ void Leds_On(uint8_t led){
 *leds=0x0004;
 
 }
+
+void Leds_Off(uint8_t led){
+    *leds=0;
+}
