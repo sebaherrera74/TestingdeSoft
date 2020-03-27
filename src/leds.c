@@ -8,10 +8,10 @@ void Leds_Create(uint16_t *direccion){
 }
 
 void Leds_On(uint8_t led){
-*leds=0x0004;
+*leds |=(1<<(led-1));    //Es lo mismo *leds =*leds | (1<<(led-1)); 
 
 }
 
 void Leds_Off(uint8_t led){
-    *leds=0;
+    *leds &=~(1<<(led-1));
 }

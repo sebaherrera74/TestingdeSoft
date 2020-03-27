@@ -23,8 +23,6 @@ void tearDown(void){
 
 
 
-
-
 void test_ledsOffAfterCreate(void){
 
     uint16_t ledsVirtuales=0xFFFF;
@@ -35,7 +33,7 @@ void test_ledsOffAfterCreate(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(29), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(28), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -53,9 +51,11 @@ void test_IndividualLedsOn(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(36), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(35), UNITY_DISPLAY_STYLE_HEX16);
 
 }
+
+
 
 
 
@@ -74,5 +74,23 @@ void test_IndividualLedsOff(void){
    ((void *)0)
 
    ), (UNITY_UINT)(44), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+void test_MulipleLedOnAndOff(void){
+
+    Leds_On(2);
+
+    Leds_On(5);
+
+    Leds_Off(2);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1<<(5-1))), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(51), UNITY_DISPLAY_STYLE_HEX16);
 
 }
