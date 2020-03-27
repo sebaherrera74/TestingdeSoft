@@ -112,3 +112,19 @@ void test_PrendeTodosLeds(void){
    ), (UNITY_UINT)(58), UNITY_DISPLAY_STYLE_HEX16);
 
 }
+
+
+
+
+
+void test_ApagaTodosLeds(void){
+
+    Leds_AllOff();
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(64), UNITY_DISPLAY_STYLE_HEX16);
+
+}

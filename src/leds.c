@@ -4,6 +4,7 @@
 #define ALL_ON     0xFFFF  //constante para apagar todos los leds
 #define BIT_ON     1       //constante para fijar el primer bit en uno 
 #define LED_OFFSET 1       // constante para convertir el numero de led en bit 
+
 static uint16_t *leds;
 
 uint8_t Leds_Bits(uint8_t led){
@@ -26,5 +27,10 @@ void Leds_Off(uint8_t led){
 
 void Leds_AllOn(void){
     *leds=ALL_ON;
+
+}
+
+void Leds_AllOff(void){
+    *leds=ALL_OFF;
 
 }

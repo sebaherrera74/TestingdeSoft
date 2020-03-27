@@ -57,3 +57,9 @@ void test_PrendeTodosLeds(void){
     Leds_AllOn();
     TEST_ASSERT_EQUAL_HEX16(0xFFFF,ledsVirtuales);
 }
+
+//6 Test -Se pueden apagar todos los leds de una vez 
+void test_ApagaTodosLeds(void){
+    Leds_AllOff();
+    TEST_ASSERT_EQUAL_HEX16(0,ledsVirtuales);
+}
