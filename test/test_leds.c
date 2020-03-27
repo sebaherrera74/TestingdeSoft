@@ -32,7 +32,7 @@ void test_ledsOffAfterCreate(void){
 void test_IndividualLedsOn(void){
     uint8_t led=3;
     Leds_On(led);
-    TEST_ASSERT_EQUAL_HEX16(1<<(led-1),ledsVirtuales);
+    TEST_ASSERT_EQUAL_HEX16(1<<(led- 1),ledsVirtuales);
 }
 
 //3 Test-Se puede apagar un LED individual.

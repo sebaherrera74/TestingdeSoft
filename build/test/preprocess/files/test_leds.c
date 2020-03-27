@@ -47,7 +47,7 @@ void test_IndividualLedsOn(void){
 
     Leds_On(led);
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1<<(led-1))), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1<<(led- 1))), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
 
    ((void *)0)
 
@@ -79,6 +79,8 @@ void test_IndividualLedsOff(void){
 
 
 
+
+
 void test_MulipleLedOnAndOff(void){
 
     Leds_On(2);
@@ -91,6 +93,6 @@ void test_MulipleLedOnAndOff(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(51), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(52), UNITY_DISPLAY_STYLE_HEX16);
 
 }
