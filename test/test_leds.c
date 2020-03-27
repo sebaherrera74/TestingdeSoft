@@ -52,3 +52,8 @@ void test_MulipleLedOnAndOff(void){
     TEST_ASSERT_EQUAL_HEX16(1<<(5-1),ledsVirtuales);
 }
 
+//5 Test -Se pueden prender todos los leds de una vez 
+void test_PrendeTodosLeds(void){
+    Leds_AllOn();
+    TEST_ASSERT_EQUAL_HEX16(0xFFFF,ledsVirtuales);
+}

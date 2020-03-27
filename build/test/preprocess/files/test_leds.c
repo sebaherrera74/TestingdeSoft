@@ -96,3 +96,19 @@ void test_MulipleLedOnAndOff(void){
    ), (UNITY_UINT)(52), UNITY_DISPLAY_STYLE_HEX16);
 
 }
+
+
+
+
+
+void test_PrendeTodosLeds(void){
+
+    Leds_AllOn();
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0xFFFF)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(58), UNITY_DISPLAY_STYLE_HEX16);
+
+}

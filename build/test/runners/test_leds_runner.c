@@ -14,6 +14,7 @@ extern void test_ledsOffAfterCreate(void);
 extern void test_IndividualLedsOn(void);
 extern void test_IndividualLedsOff(void);
 extern void test_MulipleLedOnAndOff(void);
+extern void test_PrendeTodosLeds(void);
 
 
 /*=======Mock Management=====*/
@@ -84,6 +85,7 @@ int main(void)
   run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 32);
   run_test(test_IndividualLedsOff, "test_IndividualLedsOff", 39);
   run_test(test_MulipleLedOnAndOff, "test_MulipleLedOnAndOff", 48);
+  run_test(test_PrendeTodosLeds, "test_PrendeTodosLeds", 56);
 
   return UnityEnd();
 }
