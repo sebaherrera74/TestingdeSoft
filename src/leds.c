@@ -8,6 +8,10 @@
 static uint16_t *leds; //direccion de leds 
 static uint16_t ledsImage;
 
+static void ActualizoHardware(void){
+    *leds=ledsImage;
+}
+
 uint8_t Leds_Bits(uint16_t led){
     return (BIT_ON<<(led-LED_OFFSET));
 }
@@ -15,28 +19,29 @@ uint8_t Leds_Bits(uint16_t led){
 void Leds_Create(uint16_t *direccion){
     leds=direccion;
     ledsImage=ALL_OFF; 
-    *leds=ledsImage;
+    ActualizoHardware();
 
 }
 
 void Leds_On(uint8_t led){
-ledsImage |=Leds_Bits(led);    //Es lo mismo *leds =*leds | (1<<(led-1)); 
-*leds=ledsImage;
+     ledsImage |=Leds_Bits(led);    //Es lo mismo *leds =*leds | (1<<(led-1)); 
+     ActualizoHardware();
 
 }
 
 void Leds_Off(uint8_t led){
     ledsImage &=~Leds_Bits(led);
-    *leds=ledsImage;
+    ActualizoHardware();
 }
 
 void Leds_AllOn(void){
     ledsImage=ALL_ON;
-    *leds=ledsImage;
+    ActualizoHardware();
 
 }
 
 void Leds_AllOff(void){
-    *leds=ALL_OFF;
+    ledsImage=ALL_OFF;
+    ActualizoHardware();
 
 }

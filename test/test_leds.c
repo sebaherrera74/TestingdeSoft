@@ -70,7 +70,7 @@ void test_ApagaTodosLeds(void){
 void test_ConsultaEstadoLed(void) {
     ledsVirtuales=0xFFFF;
     Leds_On(8);
-    TEST_ASSERT_EQUAL_HEX16(0x80,ledsVirtuales);
+    TEST_ASSERT_EQUAL_HEX16(0x0080,ledsVirtuales);
 }
     
 

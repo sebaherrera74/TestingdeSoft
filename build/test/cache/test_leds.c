@@ -143,7 +143,7 @@ void test_ConsultaEstadoLed(void) {
 
     Leds_On(8);
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0x80)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0x0080)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
 
    ((void *)0)
 
