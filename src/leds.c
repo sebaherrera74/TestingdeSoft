@@ -12,8 +12,8 @@ static void ActualizoHardware(void){
     *leds=ledsImage;
 }
 
-uint8_t Leds_Bits(uint16_t led){
-    return (BIT_ON<<(led-LED_OFFSET));
+uint16_t Leds_Bits(uint16_t led){
+    return BIT_ON<<(led-LED_OFFSET);
 }
 
 void Leds_Create(uint16_t *direccion){
@@ -23,13 +23,13 @@ void Leds_Create(uint16_t *direccion){
 
 }
 
-void Leds_On(uint8_t led){
+void Leds_On(uint16_t led){
      ledsImage |=Leds_Bits(led);    //Es lo mismo *leds =*leds | (1<<(led-1)); 
      ActualizoHardware();
 
 }
 
-void Leds_Off(uint8_t led){
+void Leds_Off(uint16_t led){
     ledsImage &=~Leds_Bits(led);
     ActualizoHardware();
 }

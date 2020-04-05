@@ -45,7 +45,7 @@ void test_ledsOffAfterCreate(void){
 
 void test_IndividualLedsOn(void){
 
-    uint8_t led=3;
+    uint16_t led=9;
 
     Leds_On(led);
 
@@ -63,7 +63,7 @@ void test_IndividualLedsOn(void){
 
 void test_IndividualLedsOff(void){
 
-    uint8_t led=3;
+    uint16_t led=3;
 
     Leds_On(led);
 
@@ -139,7 +139,7 @@ void test_ApagaTodosLeds(void){
 
 void test_ConsultaEstadoLed(void) {
 
-    ledsVirtuales=0xFFFF;
+
 
     Leds_On(8);
 
@@ -148,5 +148,23 @@ void test_ConsultaEstadoLed(void) {
    ((void *)0)
 
    ), (UNITY_UINT)(73), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+
+
+void test_ledsOnLimites(void){
+
+    Leds_On(1);
+
+    Leds_On(16);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0x8001)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(80), UNITY_DISPLAY_STYLE_HEX16);
 
 }

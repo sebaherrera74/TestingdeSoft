@@ -17,6 +17,7 @@ extern void test_MulipleLedOnAndOff(void);
 extern void test_PrendeTodosLeds(void);
 extern void test_ApagaTodosLeds(void);
 extern void test_ConsultaEstadoLed(void);
+extern void test_ledsOnLimites(void);
 
 
 /*=======Mock Management=====*/
@@ -90,6 +91,7 @@ int main(void)
   run_test(test_PrendeTodosLeds, "test_PrendeTodosLeds", 56);
   run_test(test_ApagaTodosLeds, "test_ApagaTodosLeds", 62);
   run_test(test_ConsultaEstadoLed, "test_ConsultaEstadoLed", 70);
+  run_test(test_ledsOnLimites, "test_ledsOnLimites", 77);
 
   return UnityEnd();
 }

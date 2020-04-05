@@ -31,14 +31,14 @@ void test_ledsOffAfterCreate(void){
 
 //2 Test-Se puede prender un LED individual.
 void test_IndividualLedsOn(void){
-    uint8_t led=3;
+    uint16_t led=9;
     Leds_On(led);
     TEST_ASSERT_EQUAL_HEX16(1<<(led-1),ledsVirtuales);
 }
 
 //3 Test-Se puede apagar un LED individual.
 void test_IndividualLedsOff(void){
-    uint8_t led=3;
+    uint16_t led=3;
     Leds_On(led);
     Leds_Off(led);
     TEST_ASSERT_EQUAL_HEX16(0,ledsVirtuales);
@@ -68,9 +68,14 @@ void test_ApagaTodosLeds(void){
 
 // 7 Test-Consulta estado de un Led  
 void test_ConsultaEstadoLed(void) {
-    ledsVirtuales=0xFFFF;
+   // ledsVirtuales=0xFFFF;
     Leds_On(8);
     TEST_ASSERT_EQUAL_HEX16(0x0080,ledsVirtuales);
 }
     
-
+//8 Revisar limites de los parametros 
+void test_ledsOnLimites(void){
+    Leds_On(1);
+    Leds_On(16);
+    TEST_ASSERT_EQUAL_HEX16(0x8001,ledsVirtuales);
+}
