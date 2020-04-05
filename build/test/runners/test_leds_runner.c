@@ -16,6 +16,7 @@ extern void test_IndividualLedsOff(void);
 extern void test_MulipleLedOnAndOff(void);
 extern void test_PrendeTodosLeds(void);
 extern void test_ApagaTodosLeds(void);
+extern void test_ConsultaEstadoLed(void);
 
 
 /*=======Mock Management=====*/
@@ -82,12 +83,13 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 25);
-  run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 32);
-  run_test(test_IndividualLedsOff, "test_IndividualLedsOff", 39);
+  run_test(test_ledsOffAfterCreate, "test_ledsOffAfterCreate", 26);
+  run_test(test_IndividualLedsOn, "test_IndividualLedsOn", 33);
+  run_test(test_IndividualLedsOff, "test_IndividualLedsOff", 40);
   run_test(test_MulipleLedOnAndOff, "test_MulipleLedOnAndOff", 48);
   run_test(test_PrendeTodosLeds, "test_PrendeTodosLeds", 56);
   run_test(test_ApagaTodosLeds, "test_ApagaTodosLeds", 62);
+  run_test(test_ConsultaEstadoLed, "test_ConsultaEstadoLed", 70);
 
   return UnityEnd();
 }

@@ -4,15 +4,15 @@
   :file: test_leds.c
 :successes:
 - :test: test_ledsOffAfterCreate
-  :line: 25
+  :line: 26
   :message: ''
   :unity_test_time: 0
 - :test: test_IndividualLedsOn
-  :line: 32
+  :line: 33
   :message: ''
   :unity_test_time: 0
 - :test: test_IndividualLedsOff
-  :line: 39
+  :line: 40
   :message: ''
   :unity_test_time: 0
 - :test: test_MulipleLedOnAndOff
@@ -27,12 +27,16 @@
   :line: 62
   :message: ''
   :unity_test_time: 0
+- :test: test_ConsultaEstadoLed
+  :line: 70
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 6
-  :passed: 6
+  :total: 7
+  :passed: 7
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.001478605998272542
+:time: 0.0017134310000983533

@@ -5,6 +5,8 @@
 
 static uint16_t ledsVirtuales;
 
+static uint16_t ledsImage;
+
 
 
 void setUp(void){
@@ -33,7 +35,7 @@ void test_ledsOffAfterCreate(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(28), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(29), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -47,11 +49,11 @@ void test_IndividualLedsOn(void){
 
     Leds_On(led);
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1<<(led- 1))), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1<<(led-1))), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(35), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(36), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -60,8 +62,6 @@ void test_IndividualLedsOn(void){
 
 
 void test_IndividualLedsOff(void){
-
-    uint16_t ledsVirtuales;
 
     uint8_t led=3;
 
@@ -119,12 +119,34 @@ void test_PrendeTodosLeds(void){
 
 void test_ApagaTodosLeds(void){
 
+    Leds_AllOn();
+
     Leds_AllOff();
 
     UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(64), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(65), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+
+
+
+
+void test_ConsultaEstadoLed(void) {
+
+    ledsVirtuales=0xFFFF;
+
+    Leds_On(8);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0x80)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(73), UNITY_DISPLAY_STYLE_HEX16);
 
 }
