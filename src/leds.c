@@ -45,3 +45,10 @@ void Leds_AllOff(void){
     ActualizoHardware();
 
 }
+
+uint16_t ConsultaLedOn(uint16_t led){
+    uint16_t posicion=led-LED_OFFSET;
+    uint16_t mascara=ledsImage & BIT_ON<<(led-LED_OFFSET);
+    return mascara>>posicion;
+    ActualizoHardware();
+}

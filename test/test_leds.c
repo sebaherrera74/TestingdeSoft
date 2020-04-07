@@ -68,11 +68,20 @@ void test_ApagaTodosLeds(void){
 
 // 7 Test-Consulta estado de un Led  
 void test_ConsultaEstadoLed(void) {
-   // ledsVirtuales=0xFFFF;
+    //ledsVirtuales=0xFFFF;
     Leds_On(8);
     TEST_ASSERT_EQUAL_HEX16(0x0080,ledsVirtuales);
 }
     
+//7-1 Consulta estado de un led prendido 
+void test_consultaLedOn(void){
+    uint16_t led=3;
+    uint16_t estadoLed;
+    Leds_On(3);
+    estadoLed=ConsultaLedOn(led);
+    TEST_ASSERT_EQUAL_HEX16(1,estadoLed);
+}
+
 //8 Revisar limites de los parametros 
 void test_ledsOnLimites(void){
     Leds_On(1);
