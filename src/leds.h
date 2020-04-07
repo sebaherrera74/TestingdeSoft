@@ -7,3 +7,4 @@ void Leds_Off(uint16_t led);
 void Leds_AllOn(void);
 void Leds_AllOff(void);
 uint16_t ConsultaLedOn(uint16_t led);
+uint16_t ConsultaLedOff(uint16_t led);

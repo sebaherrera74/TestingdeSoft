@@ -165,13 +165,45 @@ void test_consultaLedOn(void){
 
     estadoLed=ConsultaLedOn(led);
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1)), (UNITY_INT)(UNITY_INT16)((estadoLed)), (
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0x0001)), (UNITY_INT)(UNITY_INT16)((estadoLed)), (
 
    ((void *)0)
 
    ), (UNITY_UINT)(82), UNITY_DISPLAY_STYLE_HEX16);
 
 }
+
+
+
+
+
+void test_consultaLedOff(void){
+
+    uint16_t led=16;
+
+    uint16_t estadoLed;
+
+    Leds_On(led);
+
+    Leds_Off(led);
+
+    estadoLed=ConsultaLedOff(led);
+
+
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0xFFFE)), (UNITY_INT)(UNITY_INT16)((estadoLed)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(93), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+
+
+
 
 
 
@@ -187,6 +219,6 @@ void test_ledsOnLimites(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(89), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(103), UNITY_DISPLAY_STYLE_HEX16);
 
 }

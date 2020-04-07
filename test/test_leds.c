@@ -79,8 +79,22 @@ void test_consultaLedOn(void){
     uint16_t estadoLed;
     Leds_On(3);
     estadoLed=ConsultaLedOn(led);
-    TEST_ASSERT_EQUAL_HEX16(1,estadoLed);
+    TEST_ASSERT_EQUAL_HEX16(0x0001,estadoLed);
 }
+
+//7-2 Consulta estado de un led apagado
+void test_consultaLedOff(void){
+    uint16_t led=16;
+    uint16_t estadoLed;
+    Leds_On(led);
+    Leds_Off(led);
+    estadoLed=ConsultaLedOff(led);
+
+    TEST_ASSERT_EQUAL_HEX16(0xFFFE,estadoLed);
+}
+
+
+
 
 //8 Revisar limites de los parametros 
 void test_ledsOnLimites(void){

@@ -1,9 +1,9 @@
 #include "leds.h"
 
-#define ALL_OFF    0x0000      //constante para apagar los Leds 
-#define ALL_ON     0xFFFF  //constante para apagar todos los leds
-#define BIT_ON     1       //constante para fijar el primer bit en uno 
-#define LED_OFFSET 1       // constante para convertir el numero de led en bit 
+#define ALL_OFF    0x0000     //constante para apagar los Leds 
+#define ALL_ON     0xFFFF     //constante para apagar todos los leds
+#define BIT_ON     1          //constante para fijar el primer bit en uno 
+#define LED_OFFSET 1          //  constante para convertir el numero de led en bit 
 
 static uint16_t *leds; //direccion de leds 
 static uint16_t ledsImage;
@@ -51,4 +51,13 @@ uint16_t ConsultaLedOn(uint16_t led){
     uint16_t mascara=ledsImage & BIT_ON<<(led-LED_OFFSET);
     return mascara>>posicion;
     ActualizoHardware();
+}
+
+uint16_t ConsultaLedOff(uint16_t led){
+    ledsImage=ALL_ON;
+    uint16_t posicion=led-LED_OFFSET;
+    uint16_t mascara=ledsImage & BIT_ON<<(led-LED_OFFSET);
+    return ~(mascara>>posicion);
+    ActualizoHardware();
+
 }

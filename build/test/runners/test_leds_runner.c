@@ -18,6 +18,7 @@ extern void test_PrendeTodosLeds(void);
 extern void test_ApagaTodosLeds(void);
 extern void test_ConsultaEstadoLed(void);
 extern void test_consultaLedOn(void);
+extern void test_consultaLedOff(void);
 extern void test_ledsOnLimites(void);
 
 
@@ -93,7 +94,8 @@ int main(void)
   run_test(test_ApagaTodosLeds, "test_ApagaTodosLeds", 62);
   run_test(test_ConsultaEstadoLed, "test_ConsultaEstadoLed", 70);
   run_test(test_consultaLedOn, "test_consultaLedOn", 77);
-  run_test(test_ledsOnLimites, "test_ledsOnLimites", 86);
+  run_test(test_consultaLedOff, "test_consultaLedOff", 86);
+  run_test(test_ledsOnLimites, "test_ledsOnLimites", 100);
 
   return UnityEnd();
 }
